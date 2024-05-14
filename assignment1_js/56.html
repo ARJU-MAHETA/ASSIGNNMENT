@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .userform {
+            width: 800px;
+            border: 2px solid black;
+            align-items: center;
+            margin: auto;
+        }
+
+        .row {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            gap: 10px;
+            margin: 10px;
+            font-size: 20px;
+
+        }
+
+        .row1 {
+
+            display: grid;
+            grid-template-columns: 0.5fr 2fr 1fr;
+            
+            
+            margin: 10px;
+            font-size: 20px;
+
+        }
+
+        input {
+            height: 30px;
+            width: 200px;
+        }
+
+        span {
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="userform">
+        <form action="#">
+            
+
+            <div class="row">
+                <div><label for="phno">Enter number</label></div>
+                <div>
+                    <input type="text" id="phno" onkeyup="return checkPno()" maxlength="10">
+                </div>
+                <div><span id="msg1"></span></div>
+            </div>
+
+            <div class="row">
+                <div><label for="email">Enter Email</label></div>
+                <div>
+                    <input type="text" id="email" onkeyup="return checkEmail()">
+                </div>
+                <div><span id="msg2"></span></div>
+            </div>
+
+            <div class="row">
+                <div><label for="pswd">Enter Password</label></div>
+                <div>
+                    <input type="password" id="pswd" onkeyup="return checkpswd()">
+                </div>
+                <div><span id="msg3"></span></div>
+            </div>
+
+            <div class="row">
+                <div><label for="spswd">Confirm Password</label></div>
+                <div>
+                    <input type="password" id="spswd" onblur="return checkpswd()" onkeyup="return showpswd()">
+                </div>
+                <div><span id="msg4"></span></div>
+            </div>
+
+            <div class="row">
+                <input type="checkbox" id="c1" onclick="showPassword()"> <p>Show Password</p>
+            </div>
+
+
+
+            <div>
+                <button id="btn1" onclick=" return checkUsername()">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <script>
+        
+
+        
+        function checkPno() {
+            phno = document.getElementById("phno");
+            var ptn = /^[0-9]*$/;
+            var start = /^[6-9]/
+            if (!(ptn.test(phno.value))) {
+                document.getElementById("msg1").innerHTML = "Invalid number";
+            }
+            else if (!(start.test(phno.value))) {
+                document.getElementById("msg1").innerHTML = "enter number betweeb 6 to 9";
+            }
+
+            else {
+                document.getElementById("msg1").innerHTML = "";
+
+            }
+
+            return false;
+        }
+
+
+
+        function checkEmail() {
+            email = document.getElementById("email")
+            var ptn = /[A-Za-z0-9\._%$+\-]+@[A-Za-z\.\-]+\.[A-Za-z]{3}/
+            if (!(ptn.test(email.value))) {
+                document.getElementById("msg2").innerHTML = "enter correct email"
+            }
+            else {
+                document.getElementById("msg2").innerHTML = ""
+            }
+            return false;
+        }
+
+
+        function checkpswd() {
+            var pswd = document.getElementById("pswd");
+            let pattern = /^[a-zA-Z0-9!@?%&]{6,16}$/;
+            if (!(pattern.test(pswd.value))) {
+                document.getElementById("msg3").innerHTML = "incorrect password";
+            }
+            else {
+                document.getElementById("msg3").innerHTML = "";
+            }
+            return false;
+        }
+
+        function showpswd() {
+            var spwd = document.getElementById("spswd");
+            var pswd = document.getElementById("pswd");
+            if (pswd.value != spswd.value) {
+                document.getElementById("msg4").innerHTML = "Incorrect password";
+
+            }
+            else {
+                document.getElementById("msg4").innerHTML = "";
+
+            }
+            return false;
+        }
+
+        function showPassword() {
+            var pswd = document.getElementById("pswd");
+            var cpswd = document.getElementById("spswd");
+            if (pswd.type == "password" && cpswd.type == "password") {
+                pswd.type = "text";
+                cpswd.type = "text";
+            }
+            else {
+
+                pswd.type = "password";
+                cpswd.type = "password";
+            }
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

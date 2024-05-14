@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+function sum_Of_Digits() {
+  
+    const n= parseInt(prompt('Enter a positive integer: '));
+  
+  
+  let result = 0;
+
+  
+  while (n > 0) {
+    result += n % 10; 
+    n = Math.floor(n / 10); 
+  }
+
+  
+  
+
+
+// Test the function with different input numbers
+//console.log(result); // Output: 23
+console.log(sum_Of_Digits(n)); // Output: 6
+//console.log(sum_Of_Digits(2546)); // Output: 17
+}
+    </script>
+</body>
+</html>

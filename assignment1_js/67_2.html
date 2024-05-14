@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .row{
+            
+            
+            
+            display: grid;
+            grid-template-columns: 1fr  1fr 1fr;
+            width: 800px;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid black;
+        
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h5 style="text-align: center;">Marksheet infomation</h5>
+        <h3 style="text-align: center;">Enter Marks</h3>
+        <div class="row">
+            <label for="">1.C language</label>
+            <input type="text" id="C">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <label for="">2.C++language</label>
+            <input type="text" id="cc">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <label for="">3.Database</label>
+            <input type="text" id="db">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <label for="">4.Html</label>
+            <input type="text" id="html">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <label for="">5.Css</label>
+            <input type="text" id="css">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <label for="">6.Php</label>
+            <input type="text" id="php">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <label for="">7.Core Java</label>
+            <input type="text" id="java">
+            <div><span id="msg"></span></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <button id="result" onclick="return displayresult()" 
+            style="height: 30px; font-size: 20px;">Result</button>
+        </div>
+        <div class="row">
+            <div >Total:
+                <span id="total"></span>
+            </div>
+            <div >Percentage:
+                <span id="percentage"></span>
+            </div>
+            <div >Grade:
+                <span id="grade"></span>
+            </div>
+            <div>You Are
+                <span id="pass"></span>
+            </div>
+            
+        </div>
+        
+ 
+    </form>
+    <script>
+        function displayresult() {
+            let c=document.getElementById("C").value;
+            let cc=document.getElementById("cc").value;
+            let database=document.getElementById("db").value;
+            let html=document.getElementById("html").value;
+            let css=document.getElementById("css").value;
+            let php=document.getElementById("php").value;
+            let java=document.getElementById("java").value;
+            let result=document.getElementById("result").value;
+
+            result=parseFloat(c)+parseFloat(cc)+parseFloat(database)+parseFloat(html)+parseFloat(css)+parseFloat(php)+parseFloat(java);
+           
+            document.getElementById("total").innerHTML=` ${result}`
+           
+let percentage = (result / 350) * 100; 
+if (percentage <= 50 && percentage >= 40) { 
+    grades = "A"; 
+} else if (percentage <= 40 && percentage >= 30) { 
+    grades = "B"; 
+} else if (percentage <= 30 && percentage >= 25) { 
+    grades = "C"; 
+} else { 
+    grades = "F"; 
+} 
+document.getElementById("percentage").innerHTML=` ${percentage}`
+document.getElementById("grade").innerHTML=` ${grades}`
+
+
+} 
+
+ 
+
+
+        
+    </script>
+</body>
+</html>
+
