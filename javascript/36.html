@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(num) {
+            var numString = num.toString();
+            var newString = "";
+            while (numString.length > 1) { 
+                newString += (parseInt(numString[0]) + parseInt(numString[numString.length - 1])).toString(); 
+            
+                numString = numString.substring(1, numString.length - 1); 
+            }
+            newString += numString; // (4\
+
+            if (newString.length > 1) { 
+                console.log(newString)
+                return sum(newString);
+            } else {
+                return newString;
+            }
+        }
+
+
+        console.log(sum(1234));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bill">
+        <div>
+        <label for="no1">Total Amount</label>
+        <input type="text" id="no1">
+        </div>
+
+        <div>
+            <label for="no2">Paid Amount</label>
+            <input type="text" id="no2" onkeyup="return calculate()">
+            </div>
+
+                <div>
+                <label for="total">Remainnin  Amount</label>
+                <input type="text" id="total" readonly>
+                </div>
+
+        
+
+    </div>
+
+    </div>
+
+<script>
+    function calculate() {
+       let no1=Number(document.getElementById("no1").value);
+        let no2=Number(document.getElementById("no2").value);
+      let rm=(no1-no2)
+        document.getElementById("total").value=rm;
+        //document.write("total");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+* {
+  top: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.pink {
+  background-color: rgb(189, 35, 228);
+}
+
+.nav-colored {
+  background-color: #813b3b;
+}
+
+.nav-transparent {
+  background-color: transparent;
+}
+
+header {
+  position: fixed;
+  justify-content: space-between;
+}
+header .navmenu {
+  background-color: cadetblue;
+  height: 50px;
+}
+header .navmenu .nav {
+  display: flex;
+  flex-direction: row;
+  gap: 300px;
+}
+header .navmenu .nav a {
+  color: aliceblue;
+  font-size: 20px;
+}/*# sourceMappingURL=8.css.map */

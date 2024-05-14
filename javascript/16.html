@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            height: auto;
+            width: 500px;
+            margin: 100px auto;
+            border: 1px solid black;
+            padding: 20px;
+
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- comparision -->
+    <div class="main">
+        <form action="#">
+            <div class="row">
+                <div class="col">1st number : </div>
+                <div class="col">
+                    <input type="text" name="" id="n1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">2st number : </div>
+                <div class="col">
+                    <input type="text" name="" id="n2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">select operation : </div>
+                <div class="col">
+                    <select name="" id="selkey">
+                        <option value="-1">---select---</option>
+                        <option value="1">Subtraction</option>
+                        <option value="2">Minus</option>
+                        <option value="3">Multiply</option>
+                        <option value="4">Division</option>
+                        <option value="5">Module</option>
+                       
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <button onclick="return displayRes()">display</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function displayRes() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            let select = Number(document.getElementById("selkey").value);
+
+            if (select == -1) {
+                alert("select values")
+            }
+
+            switch (select) {
+                case 1:
+                    ans = no1 + no2;
+                    document.getElementById("msg").innerHTML = `${ans}`
+
+                    break;
+                case 2:
+                    ans = no1 - no2;
+                    document.getElementById("msg").innerHTML = `${ans}`
+                    break;
+                case 3:
+                    ans = no1 * no2;
+                    document.getElementById("msg").innerHTML = `${ans}`
+                    break;
+                case 4:
+                    ans = no1 / no2;
+                    document.getElementById("msg").innerHTML = `${ans}`
+                    break;
+                case 5:
+                    ans = no1 % no2;
+                    document.getElementById("msg").innerHTML = `${ans}`
+                    break;
+                default:
+                    break;
+            }
+
+            return false
+        }
+    </script>
+</body>
+
+</html>

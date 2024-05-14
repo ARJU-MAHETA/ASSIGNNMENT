@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  background: transparent;
+  transition: all ease 500ms;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 2rem;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+main {
+  width: 80vw;
+  margin: 2rem auto;
+}
+
+main div {
+  margin: 2rem;
+}
+
+.scrolled {
+  background: hsl(160, 100%, 50%);
+  box-shadow: 0 1px 5px hsla(0, 0%, 0%, 0.3);
+}
+
+
+</style>
+
+
+</head>
+<body>
+    
+    <header>
+        <nav id="navigation">
+          <ul>
+            <li>Link One</li>
+            <li>Link Two</li>
+            <li>Link Three</li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta repudiandae labore blanditiis impedit culpa corrupti eum alias, libero ut recusandae assumenda officiis nostrum explicabo quo vitae fuga consequatur suscipit facere.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos suscipit praesentium, quo officiis error voluptatum in atque ex itaque nam, consequuntur magni voluptas voluptatibus excepturi illo omnis facere accusamus fugiat?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos itaque, rerum tempora natus possimus deleniti cumque? Dolorum ea vero tenetur cumque veritatis corrupti enim itaque ab voluptatibus, rerum omnis obcaecati.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus suscipit amet possimus autem nisi perspiciatis eligendi repellat distinctio molestias! Quam quisquam commodi iure expedita ipsum! Inventore qui tenetur eos ullam?
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione officiis consequuntur ullam! Odio rem distinctio iusto autem quis necessitatibus deleniti consequatur velit adipisci atque. Reprehenderit numquam consectetur blanditiis officiis saepe!
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad earum ducimus doloremque officiis molestiae tempore, aliquid odit necessitatibus soluta aperiam quia atque deleniti ipsam quo molestias, blanditiis doloribus iusto! Minima?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi veniam nisi fugit suscipit necessitatibus consequuntur esse consequatur veritatis voluptatum nobis minima, repellat eum, officia autem omnis, eos in tempora perspiciatis.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam magnam vel neque perferendis possimus, voluptatibus quis dignissimos, ipsam labore veritatis facere, quaerat placeat totam asperiores non inventore dolore obcaecati quas.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste possimus perferendis quod dolores adipisci ea facilis, a exercitationem omnis nihil repudiandae unde? Magnam delectus eligendi culpa commodi tenetur similique voluptas!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, quae. Voluptatum ipsum similique iusto asperiores nam qui sint enim, hic fugiat quos nemo laudantium ducimus! Mollitia fugit aut nemo quae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt delectus non rerum assumenda voluptatem deserunt omnis consectetur, ipsa laudantium temporibus aut, quisquam numquam, modi aliquam. Aperiam consequuntur voluptatum hic aspernatur!
+          </p>
+          <img src="https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg" style="width: 100%
+          ;" alt="">
+      </main>
+<script>
+   
+const nav = document.getElementById('navigation');
+
+
+document.addEventListener('scroll', () => {
+  nav.classList.add('scrolled');
+
+ 
+  setTimeout(() => {
+    if (window.pageYOffset === 0 && nav.classList.contains('scrolled')) {
+      nav.classList.remove('scrolled');
+    }
+  }, 1000);
+});
+</script>
+
+
+
+</body>
+</html>

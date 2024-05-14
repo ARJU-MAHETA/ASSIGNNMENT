@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            border: 2px solid black;
+            padding: 10px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <button id="green" onclick=" colorChange('green')">Green</button>
+        <button id="blue" onclick=" colorChange2()">Red</button>
+        <button id="red" onclick=" colorChange3()">Blue</button>
+        <div class="table"></div>
+        <style>
+
+        </style>
+
+    </form>
+    <script>
+        function colorChange() {
+            let green = document.getElementById("green")
+
+            let tbl = document.querySelector(".table");
+            tbl.style.backgroundColor = "green";
+
+
+        }
+        function colorChange2() {
+
+            let red = document.getElementById("red")
+
+            let tbl = document.querySelector(".table");
+
+            tbl.style.backgroundColor = "red";
+
+
+        }
+        function colorChange3() {
+
+            let blue = document.getElementById("blue")
+            let tbl = document.querySelector(".table");
+
+            tbl.style.backgroundColor = "blue";
+
+        }
+    </script>
+</body>
+
+</html>

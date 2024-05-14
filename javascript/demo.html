@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Document</title>
+
+        <style>
+            * {
+                top: 0px;
+                margin: 0px;
+            }
+
+            a {
+                text-decoration: none;
+                color: aliceblue;
+            }
+
+            ul {
+                list-style: none;
+            }
+            header{
+                position: fixed;
+                justify-content: space-between;
+            }
+            .navmenu{
+                background-color: cadetblue;
+                height: 50px;
+                width: 100%;
+               
+            }
+            .nav{
+                display: flex;
+                
+                
+                font-size: 30px;
+                gap: 50px;
+            }
+            .pink{
+                background-color: blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="navmenu">
+
+                    <ul class="nav">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Image</a></li>
+                        <li><a href="">Service</a></li>
+                    </ul>
+                </div>
+
+
+
+
+
+            </div>
+
+            </div>
+
+
+        </header>
+        <section class="image">
+
+            <img src="https://wallpapercave.com/wp/QDO40f0.jpg" alt="">
+
+        </section>
+
+        <script>
+            const nav = document.getElementsByClassName("nav");
+            window.onscroll = function () {
+                if (document.body.scrollTop >= 200) {
+                    nav.classList.add("pink");
+                    nav.classList.remove("nav");
+                }
+                else {
+                    nav.classList.add("nav-transparent");
+                    nav.classList.remove("nav-colored");
+                }
+            };
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>

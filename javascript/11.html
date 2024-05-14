@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.row1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 400px;
+    margin: auto;
+    padding: 10px 0px;
+    top: 10px;
+}
+button{
+    
+    height: 40px;
+    width: 50px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    }
+    span{
+        text-align: center;
+        font-size: 30px;
+
+    }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div  class="row1">
+        <label for="">Enter Number 1</label>
+         <input type="text" id="n1">
+        </div>
+        <div  class="row1">
+        <label for="">Enter Number 2</label>
+        <input type="text" id="n2">
+        </div>
+        <div  class="row1">
+            <button id="plus" onclick="  checkPlus()">+</button>
+            <button id="minus" onclick="  checkminus()">-</button>
+            <button id="multi" onclick="  checkmulti()">*</button>
+            <button id="divi" onclick="  checkdivi()">/</button>
+            <button id="modu" onclick="  checkmodu()">%</button>
+            </div>
+            
+            
+    
+    
+    <span id="msg" > </span> 
+</div>
+    </form>
+
+
+    <script>
+        function checkPlus() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            let plus=Number(document.getElementById("plus").value);
+        
+            plus=no1+no2;
+            document.getElementById("msg").innerHTML=`Answer is ${plus}`
+        }
+
+        function checkminus() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            let minus=Number(document.getElementById("minus").value);
+        
+            minus=no1-no2;
+            document.getElementById("msg").innerHTML=`Answer is ${minus}`
+        }
+
+        function checkmulti() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            let multi=Number(document.getElementById("multi").value);
+        
+            multi=no1*no2;
+            document.getElementById("msg").innerHTML=`Answer is ${multi}`
+        }
+
+        function checkdivi() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            let multi=Number(document.getElementById("multi").value);
+        
+            divi=no1/no2;
+            document.getElementById("msg").innerHTML=`Answer is ${divi}`
+        }
+
+        function checkmodu() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            let modu=Number(document.getElementById("modu").value);
+        
+            modu=no1%no2;
+            document.getElementById("msg").innerHTML=`Answer is ${modu}`
+        }
+
+
+    </script>
+</body>
+</html>
