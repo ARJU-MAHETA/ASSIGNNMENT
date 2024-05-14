@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+.row1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    width: 400px;
+    margin: auto;    
+}
+
+</style>
+    
+
+
+</head>
+<body>
+    <div class="row1">
+        <div><label for="">Password</label></div>
+        <div>
+            <input type="password" name="" id="pass" onblur="return checkPassword('pass','msg8')" >
+        </div>
+        <div>
+            <span id="msg8"></span>
+        </div>
+    </div>
+
+    <div class="row1">
+        <div></div>
+        <div><input type="checkbox" onclick="showpassword()"> Show Password</div>
+        
+        
+    </div>
+
+    <script>
+        function checkPassword(pass,msg) {
+            var pass = document.getElementById("pass");
+             var passptn = /^[a-zA-Z0-9!@?%&]{6,16}$/;
+           
+            if (passptn.test(pass.value)) {
+                document.getElementById(msg).innerHTML = ""
+                pass.classList.remove("error")
+            } else {
+                document.getElementById(msg).innerHTML = "Invalid Password";
+                pass.classList.add("error")
+            }
+            return false;
+        }
+
+        function showpassword() {
+            var pass = document.getElementById("pass");
+           
+            if (pass.type == "password") {
+                pass.type = "text"
+                
+            } else {
+                pass.type = "password"
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         form {
+            border: 2px solid black;
+            width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .f1 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            padding: 10px 0;
+            align-items: center;
+        }
+        input[type="text"]
+        {
+            height: 20px;
+            width: 90%;
+        }
+        
+        input[type="text"]:focus-visible {
+            outline: none;
+        }
+
+        span {
+            color: red;
+        }
+
+        
+        .row1 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 10px 0px;
+            gap: 20px;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div class="f1">
+            <div>First Name</div>
+            <div><input type="text" placeholder="Enter Name"   id="fname"  onkeyup=" username(fname,'msg1')"  onblur="return checkname(fname, 'msg1')"></div>
+            <div>
+                <span id="msg1"></span>
+            </div>
+        </div> 
+
+
+        <div class="f1">
+            <div>Middle  Name</div>
+            <div><input type="text"  placeholder="Enter Middle Name"  id="mname"  onkeyup=" username(mname,'msg2')"  onblur="return checkname(mname, 'msg2')"></div>
+            <div>
+                <span id="msg2"></span>
+            </div>
+        </div> 
+
+
+
+
+
+
+
+        <div class="f1">
+            <div>Last  Name</div>
+            <div><input type="text"  placeholder="Enter Last  Name"  id="lname"  onkeyup=" username(lname,'msg3')"  onblur="return checkname(lname, 'msg3')"></div>
+            <div>
+                <span id="msg3"></span>
+            </div>
+        </div> 
+
+
+        <div class="f1">
+            <div>Address</div>
+            <div><input type="address"  placeholder="Enter Address"  id="address"  onkeyup=" username(address,'msg4')"  onblur="return checkname(lname, 'msg4')"></div>
+            <div>
+                <span id="msg4"></span>
+            </div>
+        </div> 
+        
+        <div class="f1">
+            <div>Date</div>
+            <div><input type="date"></div>
+        </div> 
+
+
+        <div class="row1">
+            <div><label >Gender</label></div>
+            <div>
+            <input type="radio" id="g1" name="gender" onblur=" return checkbox1(g1,msg5)">
+            <label for="">Female</label>
+            <input type="radio" id="g2" name="gender">
+            <label for="">Male</label>
+
+            </div>
+            <div>
+                <span id="msg5"></span>
+            </div>
+
+
+        </div> 
+
+
+        
+
+        <div class="row1">
+            <div>Experience</div>
+            <div>
+                <select name="" id="city">
+                    <option value="">----Experience----</option>
+                    <option value="">Ahmedabad</option>
+                    <option value="">Gandhinagar</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row1">
+            <div><label for="">Mobile No</label></div>
+            <div>
+                <input type="text" name="" id="mno" maxlength="10" 
+                    onkeyup="return numbercheck('mno','msg6')">
+            </div>
+            <div>
+                <span id="msg6"></span>
+            </div>
+        </div>
+
+        <div class="row1">
+            <div><label for="">Email Id</label></div>
+            <div>
+                <input type="text" name="" id="email" onkeyup="return emailcheck('email','msg7')" >
+            </div>
+            <div>
+                <span id="msg7"></span>
+            </div>
+        </div>
+
+
+        <div class="row1">
+            <div><label for="">Password</label></div>
+            <div>
+                <input type="password" name="" id="pass" onblur="return checkPassword('pass','msg8')" >
+            </div>
+            <div>
+                <span id="msg8"></span>
+            </div>
+        </div>
+
+
+        <div class="row1">
+            <div></div>
+            <div><input type="checkbox" onclick="showpassword()"> Show Password</div>
+            
+            
+        </div>
+        <p>
+            Note : password must be in 6character. which contains  number and special!@?%&
+            characters. 
+        </p>
+
+
+
+        <script>
+        function username(fname,msg) {
+            let ptn = /^[a-zA-Z]*$/
+            if (!(ptn.test(fname.value))) {
+                document.getElementById(msg).innerHTML="Invalid name"                
+            }            
+            else
+            {
+                document.getElementById(msg).innerHTML=""
+            }
+        return false
+        }
+
+
+        function checkname(blank, msg) {
+            if (blank.value == "") {
+                document.getElementById(msg).innerHTML = "Enter your name"
+                blank.classList.add("error")
+            }
+            return false
+        }
+
+        function checkbox1(check1,msg,check2) {
+            if(ckeck1.checked==false && check2.checked==false )
+            {
+                document.getElementById(msg).innerHTML="Select value"
+            }
+            else {
+                document.getElementById(msg).innerHTML = "";
+            }
+            return false
+        }
+
+
+        function numbercheck(num1,msg) {
+            let no = document.getElementById(num1)
+            var pattern = /^[0-9]*$/;
+            var start = /^[6-9]/;
+            if (!(pattern.test(num1.value))) {
+                document.getElementById(msg).innerHTML = "Invalid Number!!!";
+              
+            } else if (!(start.test(num1.value))) {
+                document.getElementById(msg).innerHTML = "Number should be start in between 6-9";
+                
+            } else if (num1.value.length < 10) {
+                document.getElementById(msg).innerHTML = "Enter 10 digits";
+                
+            } else {
+                document.getElementById(msg).innerHTML = ""
+            }
+            return false
+        }
+            
+        
+
+        function emailcheck(email,msg) {
+            var emailptn = /[A-Za-z0-9\._%$+\-]+@[A-Za-z\.\-]+\.[A-Za-z]{3}/
+            var mail = document.getElementById(email);
+            if (emailptn.test(mail.value)) {
+                document.getElementById(msg).innerHTML = ""
+            } else {
+                document.getElementById(msg).innerHTML = "Invalid Email Address!!!"
+            }
+        }
+            
+
+
+         function checkPassword(pass,msg) {
+            var pass = document.getElementById("pass");
+             var passptn = /^[a-zA-Z0-9!@?%&]{6,16}$/;
+           
+            if (passptn.test(pass.value)) {
+                document.getElementById(msg).innerHTML = ""
+                pass.classList.remove("error")
+            } else {
+                document.getElementById(msg).innerHTML = "Invalid Password";
+                pass.classList.add("error")
+            }
+            return false;
+        }
+
+        function showpassword() {
+            var pass = document.getElementById("pass");
+           
+            if (pass.type == "password") {
+                pass.type = "text"
+                
+            } else {
+                pass.type = "password"
+                
+            }
+        }
+
+
+        </script>
+
+    </form> 
+        </html>

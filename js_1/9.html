@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.row1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 400px;
+    margin: auto;
+    padding: 10px 0px;
+    top: 10px;
+}
+button{
+    
+    height: 40px;
+    width: 100px;
+    
+    align-items: center;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div  class="row1">
+        <label for="">Enter Number 1</label>
+         <input type="text" id="n1">
+        </div>
+        <div  class="row1">
+        <label for="">Enter Number 2</label>
+        <input type="text" id="n2">
+        </div>
+        <div  class="row1">
+            <button onclick="  checknumber()">Display</button>
+            </div>
+       
+    
+    
+    <span id="msg"></span> 
+</div>
+    </form>
+
+
+    <script>
+        function checknumber() {
+            let no1 = Number(document.getElementById("n1").value);
+            let no2 = Number(document.getElementById("n2").value);
+            if(n1.value>n2.value){
+                document.getElementById("msg").innerHTML=`${no1} is greater`
+                console.log("hello");
+            }
+            else{
+                document.getElementById("msg").innerHTML=`${no2} is greater`
+            }
+
+        }
+
+    </script>
+</body>
+</html>
